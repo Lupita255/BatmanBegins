@@ -18,17 +18,17 @@ function preload(){
 }
 
 function setup(){
-  var canvas = createCanvas(500,500);
+  var canvas = createCanvas(400,400);
 
   engine = Engine.create();
   world  = engine.world;
 
   
-  umbrella = new Umbrella(250,350,80,150);
+  umbrella = new Umbrella(200,400,80,150);
 
   if(frameCount%100===0){
     for(var i=0; i<maxDrops;i++){
-      drops.push(new Drop(random(0,600),random(0,600),3,6));
+      drops.push(new Drop(random(0,400),random(0,400),3,6));
      }
     }
 
