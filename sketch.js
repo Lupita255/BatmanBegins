@@ -24,11 +24,11 @@ function setup(){
   world  = engine.world;
 
   
-  umbrella = new Umbrella(250,250);
+  umbrella = new Umbrella(250,350,80,150);
 
   if(frameCount%100===0){
     for(var i=0; i<maxDrops;i++){
-      drops.push(new Drop(random(0,400),random(0,400),3,10));
+      drops.push(new Drop(random(0,400),random(0,500),3,10));
      }
     }
 
@@ -49,5 +49,4 @@ function draw(){
   
   drawSprites();
 }
-
 
