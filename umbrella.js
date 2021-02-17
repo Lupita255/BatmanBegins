@@ -1,28 +1,26 @@
-class Umbrella{
-	constructor(x,y)
-	{
-		var options={
-			isStatic:true,
-			restitution :0,
-            friction :1,
-			}
-		this.x=x;
-		this.y=y;
-		this.image=loadImage("man.png")
-		this.body=Bodies.circle(this.x, this.y,options)
-		World.add(world, this.body);
+class Umbrella {
+	constructor(x, y, width, height) {
+	  var options = {
+		isStatic: true,
+		restitution: 0.3,
+		friction: 1.0,
+		density: 1.0,
+	  };
+	  this.body = Bodies.rectangle(x, y, width, height, options);
+	  this.width = width;
+	  this.height = height;
+	  this.image = loadImage("man.png");
+	  World.add(world, this.body);
 	}
-
-	display()
-	{
-		var umbrellaPos=this.body.position;	
-		push()
-		translate(umbrellaPos.x, umbrellaPos.y);
-		rotate(this.body.angle)
-		fill(255,0,255)
-		imageMode(CENTER);
-		ellipseMode(CENTER);
-		image(this.image, 0,0,this.r*2, this.r*2)
-		pop()
- }
-}
+	display() {
+	  var pos = this.body.position;
+	  var angle = this.body.angle;
+	  push();
+	  translate(pos.x, pos.y);
+	  rotate(angle);
+	  imageMode(CENTER);
+	  fill("white");
+	  image(this.image, 0, 0, pos.x, pos.y);
+	  pop();
+	}
+  }
